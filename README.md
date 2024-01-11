@@ -20,6 +20,10 @@ node 版本大于 17 会出现以下报错`Error: error:0308010C:digital envelop
 2. 安装 eslint 相关插件
 3. 安装 css modules
 
+## 首页开发
+
+1. 先有个 route 定义
+
 # 中途可能遇到的问题：
 
 ### 下载 electron 指定版本非常慢
