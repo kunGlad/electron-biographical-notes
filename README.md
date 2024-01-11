@@ -16,7 +16,9 @@ node 版本大于 17 会出现以下报错`Error: error:0308010C:digital envelop
 
 ## 引入更多技术点 --feat/introduce_more_technical_points
 
-1. 安装 ts 插件，并将所有 js, jsx 文件改为 tsx 文件
+1. 安装指定版本 ts@4.2.4 插件，并将所有 js, jsx 文件改为 tsx 文件
+2. 安装 eslint 相关插件
+3. 安装 css modules
 
 # 中途可能遇到的问题：
 
@@ -45,6 +47,10 @@ remote: error: File node_modules/electron/dist/Electron.app/Contents/Frameworks/
 尝试用过新增分支提交的方法 失败
 主要原因在于 node_modules 体积太大了
 删除 node_modules 重新提交即可 或者在主目录下新增一个.gitignore 文件 里面写入 node_modules 即可， 此时 node_modules 会颜色会变成浅灰色
+
+### 切换新分支 push 的时候提示连接仓库
+
+`git push --set-upstream electron-biographical-notes 【feat/introduce_more_technical_points】`
 
 ### 启动报错
 
