@@ -1,8 +1,18 @@
+# 整体创建流程
+
+## 开始搭建平台
+
+创建文件夹 `mkdir electron-biographical-notes`
+切换到目录下 `cd electron-biographical-notes`
+创建 package.json 文件 并给定初始值 {}
+安装 electron 指定版本 `npm install electron@11.1.1`
+编写 package.json 文件
+
 ### 下载 electron 指定版本非常慢
 
 1. 终端输入 `npm config set registry https://registry.npmmirror.com`
 2. 查看镜像源 `npm config get registry`
-3. 镜像源显示为 https://registry.npmmirror.com/则表明更换成功，已是淘宝最新镜像源
+3. 镜像源显示为 https://registry.npmmirror.com/，则表明更换成功已是淘宝最新镜像源
 4. https://nodejs.cn/download/ 点击指定版本下载安装 node.js 同时会自动更新 npm 包的版本
 5. 修改 npm 的配置文件 `npm config edit` 进入编辑页面
 6. 在 registry= https://registry.npmmirror.com/ 上面一行 添加配置 `electron_mirror=https://cdn.npm.taobao.org/dist/electron/`
