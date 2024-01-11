@@ -1,3 +1,13 @@
+# 整体创建流程
+
+## 开始搭建平台
+
+创建文件夹 `mkdir electron-biographical-notes`
+切换到目录下 `cd electron-biographical-notes`
+创建 package.json 文件 并给定初始值 {}
+安装 electron 指定版本 `npm install electron@11.1.1`
+编写 package.json 文件
+
 ### 下载 electron 指定版本非常慢
 
 1. 终端输入 `npm config set registry https://registry.npmmirror.com`
