@@ -1,6 +1,6 @@
 # 整体创建流程
 
-## 开始搭建平台
+## 开始搭建平台 --feat/electron_init
 
 创建文件夹 `mkdir electron-biographical-notes`
 切换到目录下 `cd electron-biographical-notes`
@@ -8,7 +8,7 @@
 安装 electron 指定版本 `npm install electron@11.1.1`
 编写 package.json 文件
 
-## 安装及配置 react, webpack 相关插件并启动
+## 安装及配置 react, webpack 相关插件并启动 --feat/react_init
 
 babel-loader 安装指定版本 8.2.2
 npm run start:render 编译成功后 会有输出文件 dist
