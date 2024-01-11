@@ -14,15 +14,20 @@ babel-loader 安装指定版本 8.2.2
 npm run start:render 编译成功后 会有输出文件 dist
 node 版本大于 17 会出现以下报错`Error: error:0308010C:digital envelope routines::unsupported` 终端运行 `export NODE_OPTIONS=--openssl-legacy-provider` 就可以了
 
+## 引入更多技术点 --feat/introduce_more_technical_points
+
+1. 安装 ts 插件，并将所有 js, jsx 文件改为 tsx 文件
+
+# 中途可能遇到的问题：
+
 ### 下载 electron 指定版本非常慢
 
 1. 终端输入 `npm config set registry https://registry.npmmirror.com`
 2. 查看镜像源 `npm config get registry`
 3. 镜像源显示为 https://registry.npmmirror.com/，则表明更换成功已是淘宝最新镜像源
-4. https://nodejs.cn/download/ 点击指定版本下载安装 node.js 同时会自动更新 npm 包的版本
-5. 修改 npm 的配置文件 `npm config edit` 进入编辑页面
-6. 在 registry= https://registry.npmmirror.com/ 上面一行 添加配置 `electron_mirror=https://cdn.npm.taobao.org/dist/electron/`
-7. 重新执行安装命令 就可以了 `npm install electron@11.1.1`
+4. 修改 npm 的配置文件 `npm config edit` 进入编辑页面
+5. 在 registry= https://registry.npmmirror.com/ 上面一行 添加配置 `electron_mirror=https://cdn.npm.taobao.org/dist/electron/`
+6. 重新执行安装命令 就可以了 `npm install electron@11.1.1`
 
 ### 用命令行删除 github 中的仓库
 

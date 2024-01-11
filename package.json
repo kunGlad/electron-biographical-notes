@@ -3,7 +3,7 @@
  "version": "0.0.1",
  "author": "彭道宽",
  "description": "从0到1实现一款轻巧适用的简历平台桌面应用。",
- "main": "./app/main/electron.js",
+ "main": "./app/main/electron.ts",
  "scripts": {
   "start:main": "webpack --config ./webpack/webpack.main.dev.js && electron ./dist/electron.js",
   "start:render": "webpack-dev-server --config ./webpack/webpack.render.dev.js",
@@ -28,6 +28,7 @@
   "babel-loader": "^8.2.2",
   "clean-webpack-plugin": "^4.0.0",
   "html-webpack-plugin": "^4.3.0",
+  "typescript": "^5.3.3",
   "webpack": "^4.44.1",
   "webpack-cli": "^3.3.12",
   "webpack-dev-server": "^3.11.2",
