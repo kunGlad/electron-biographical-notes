@@ -8,6 +8,12 @@
 安装 electron 指定版本 `npm install electron@11.1.1`
 编写 package.json 文件
 
+## 安装及配置 react, webpack 相关插件并启动
+
+babel-loader 安装指定版本 8.2.2
+npm run start:render 编译成功后 会有输出文件 dist
+node 版本大于 17 会出现以下报错`Error: error:0308010C:digital envelope routines::unsupported` 终端运行 `export NODE_OPTIONS=--openssl-legacy-provider` 就可以了
+
 ### 下载 electron 指定版本非常慢
 
 1. 终端输入 `npm config set registry https://registry.npmmirror.com`
@@ -33,4 +39,16 @@ remote: error: File node_modules/electron/dist/Electron.app/Contents/Frameworks/
 
 尝试用过新增分支提交的方法 失败
 主要原因在于 node_modules 体积太大了
-删除 node_modules 重新提交即可
+删除 node_modules 重新提交即可 或者在主目录下新增一个.gitignore 文件 里面写入 node_modules 即可， 此时 node_modules 会颜色会变成浅灰色
+
+### 启动报错
+
+node:internal/crypto/hash:68
+this[kHandle] = new \_Hash(algorithm, xofLen);
+^
+
+Error: error:0308010C:digital envelope routines::unsupported
+
+出现这个问题是 node.js 的版本问题，因为 node.js V17 开始版本中发布的是 OpenSSL3.0, 而 OpenSSL3.0 对允许算法和密钥大小增加了严格的限制，可能会对生态系统造成一些影响。故此以前的项目在使用 nodejs V17 以上版本后会报错。而 github 项目很多都是之前版本的 npm，所以运行时候会出现这个问题。
+
+下载安装 16.19.0.pkg 版本的就行了 https://nodejs.org/download/release/v16.19.0/
