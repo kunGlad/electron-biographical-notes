@@ -25,3 +25,12 @@
 
 1. 删除远程 `git remote rm 【仓库名称】 && rm -rf .git`
 2. 删除本地 `rm -rf repository`
+
+### 提交报错
+
+remote: error: File node_modules/electron/dist/Electron.app/Contents/Frameworks/Electron Framework.framework/Versions/A/Electron Framework is 127.26 MB; this exceeds GitHub's file size limit of 100.00 MB
+! [remote rejected] feat/electron_init -> feat/electron_init (pre-receive hook declined)
+
+尝试用过新增分支提交的方法 失败
+主要原因在于 node_modules 体积太大了
+删除 node_modules 重新提交即可
