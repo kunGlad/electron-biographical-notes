@@ -25,7 +25,11 @@
 1. 先有个 root 文件 -- feat/touter_page_init
 2. 首页开发+路由跳转 -- feat/chapter-04-02
 3. 路由合并到到一个入口文件下-代码优化 -- feat/chapter-04-03
-4. utils 方法抽离 -- feat/chapter-04-04
+4. utils 方法抽离 -- feat/chapter-04-
+
+### 如何写我们的 redux 与 file-实时性存储-feat/chapter-05
+
+1. 安装 redux 固定版本 `npm install redux@4.1.0 `
 
 # 中途可能遇到的问题：
 
