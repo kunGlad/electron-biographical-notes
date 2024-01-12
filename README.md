@@ -29,7 +29,10 @@
 
 ### 如何写我们的 redux 与 file-实时性存储-feat/chapter-05
 
-1. 安装 redux 固定版本 `npm install redux@4.1.0 `
+1. 安装 redux 固定版本 `npm install redux@4.1.0 `以及 rc-redux-model 这个包 并初始化 model
+2. 安装 react-redux 固定版本 `npm install reac
+t-redux@7.2.4` 简化对 redux 的操作
+3. 封装文件增删改查函数，并简单测试 在渲染进程中向主进程发送消息 读取 文件内容
 
 # 中途可能遇到的问题：
 

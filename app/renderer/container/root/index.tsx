@@ -5,9 +5,14 @@ import { shell } from 'electron';
 // import Logo from '@assets/logo.jpg';
 import { ROUTER_ENTRY } from '@src/common/constants/router';
 import { isHttpOrHttpsUrl } from '@src/common/utils/router';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Root() {
   const history = useHistory();
+  const appName = useSelector((state: any) => state.globalModel.appName);
+  const dispatch = useDispatch();
+
+  console.log('appName=', appName);
 
   function onRouterToLink(router: TSRouter.Item) {
     if (isHttpOrHttpsUrl(router.url)) {
