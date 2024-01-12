@@ -1,6 +1,6 @@
 # 整体创建流程
 
-## 开始搭建平台 --feat/electron_init
+## 开始搭建平台 -- feat/electron_init
 
 1. 创建文件夹 `mkdir electron-biographical-notes`
 2. 切换到目录下 `cd electron-biographical-notes`
@@ -8,31 +8,35 @@
 4. 安装 electron 指定版本 `npm install electron@11.1.1`
 5. 编写 package.json 文件
 
-## 安装及配置 react, webpack 相关插件并启动 --feat/react_init
+## 安装及配置 react, webpack 相关插件并启动 -- feat/react_init
 
 1. babel-loader 安装指定版本 8.2.2
 2. npm run start:render 编译成功后 会有输出文件 dist
 3. node 版本大于 17 会出现以下报错`Error: error:0308010C:digital envelope routines::unsupported` 终端运行 `export NODE_OPTIONS=--openssl-legacy-provider` 就可以了
 
-## 引入更多技术点 --feat/introduce_more_technical_points
+## 引入更多技术点 -- feat/introduce_more_technical_points
 
 1. 安装指定版本 ts@4.2.4 插件，并将所有 js, jsx 文件改为 tsx 文件
 2. 安装 eslint 相关插件
 3. 安装 css modules
 
-## 首页开发- feat/chapter-04-
+## 首页开发 -- feat/chapter-04-
 
 1. 先有个 root 文件 -- feat/touter_page_init
 2. 首页开发+路由跳转 -- feat/chapter-04-02
 3. 路由合并到到一个入口文件下-代码优化 -- feat/chapter-04-03
-4. utils 方法抽离 -- feat/chapter-04-
+4. utils 方法抽离 -- feat/chapter-04-04
 
-### 如何写我们的 redux 与 file-实时性存储-feat/chapter-05
+### 如何写我们的 redux 与 file-实时性存储-- feat/chapter-05
 
 1. 安装 redux 固定版本 `npm install redux@4.1.0 `以及 rc-redux-model 这个包 并初始化 model
 2. 安装 react-redux 固定版本 `npm install reac
 t-redux@7.2.4` 简化对 redux 的操作
 3. 封装文件增删改查函数，并简单测试 在渲染进程中向主进程发送消息 读取 文件内容
+
+### 自定义组件封装 -- feat/chapter-06
+
+button, input, textarea, upload, modal, scrollbox
 
 # 中途可能遇到的问题：
 
