@@ -8,7 +8,8 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     // 别名
     alias: {
-      '@src': path.join(__dirname, '../', 'app/render'),
+      '@assets': path.join(__dirname, '../', 'assets'),
+      '@src': path.join(__dirname, '../', 'app/renderer'),
     },
   },
   module: {
