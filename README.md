@@ -36,7 +36,8 @@ t-redux@7.2.4` 简化对 redux 的操作
 
 ### 自定义组件封装 -- feat/chapter-06
 
-button, input, textarea, upload, modal, scrollbox
+1. button, input, textarea, upload, modal, scrollbox
+2. 定义 resume 相关 store 和 mock 数据
 
 # 中途可能遇到的问题：
 
