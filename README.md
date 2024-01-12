@@ -20,10 +20,10 @@
 2. 安装 eslint 相关插件
 3. 安装 css modules
 
-## 首页开发
+## 首页开发- feat/chapter-04-
 
-1. 先有个 root 文件
-2. 首页开发+路由跳转
+1. 先有个 root 文件 -- feat/touter_page_init
+2. 首页开发+路由跳转 -- feat/chapter-04-02
 3. 路由合并到到一个入口文件下-代码优化
 4.
 

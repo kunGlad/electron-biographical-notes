@@ -26,6 +26,5 @@
  "paths": {
    "@assets/*": ["./assets/*"],
    "@src/*": ["./app/renderer/*"],
-   "@common/*": ["./app/renderer/common/*"]
  }
 }

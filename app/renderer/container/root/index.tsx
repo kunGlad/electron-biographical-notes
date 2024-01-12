@@ -2,12 +2,14 @@ import React from 'react';
 import './index.less';
 import { useHistory } from 'react-router';
 import { shell } from 'electron';
+// import Logo from '@assets/logo.jpg';
+import { ROUTER_ENTRY } from '@src/common/constants/router';
 
 function Root() {
   const history = useHistory();
 
-  function onRouterToLink(text: string) {
-    if (text !== '简历') {
+  function onRouterToLink(router: TSRouter.Item) {
+    if (router.text !== '简历') {
       // 通过shell模块， 打开默认浏览器，进入github
       shell.openExternal('https://github.com/kunGlad/electron-biographical-notes');
     } else {
@@ -22,10 +24,10 @@ function Root() {
         <div styleName="title">electron-biographical-notes</div>
         <div styleName="tips">一个模版简历制作平台，让你的简历更出众~</div>
         <div styleName="action">
-          {['介绍', '简历', '源码'].map((text, index) => {
+          {ROUTER_ENTRY.map((router: TSRouter.Item) => {
             return (
-              <div key={index} styleName="item" onClick={() => onRouterToLink(text)}>
-                {text}
+              <div key={router.key} styleName="item" onClick={() => onRouterToLink(router)}>
+                {router.text}
               </div>
             );
           })}
