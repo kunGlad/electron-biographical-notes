@@ -4,16 +4,17 @@ import { useHistory } from 'react-router';
 import { shell } from 'electron';
 // import Logo from '@assets/logo.jpg';
 import { ROUTER_ENTRY } from '@src/common/constants/router';
+import { isHttpOrHttpsUrl } from '@src/common/utils/router';
 
 function Root() {
   const history = useHistory();
 
   function onRouterToLink(router: TSRouter.Item) {
-    if (router.text !== '简历') {
+    if (isHttpOrHttpsUrl(router.url)) {
       // 通过shell模块， 打开默认浏览器，进入github
-      shell.openExternal('https://github.com/kunGlad/electron-biographical-notes');
+      shell.openExternal(router.url);
     } else {
-      history.push('/resume');
+      history.push(router.url);
     }
   }
 

@@ -24,8 +24,8 @@
 
 1. 先有个 root 文件 -- feat/touter_page_init
 2. 首页开发+路由跳转 -- feat/chapter-04-02
-3. 路由合并到到一个入口文件下-代码优化
-4.
+3. 路由合并到到一个入口文件下-代码优化 -- feat/chapter-04-03
+4. utils 方法抽离 -- feat/chapter-04-04
 
 # 中途可能遇到的问题：
 
