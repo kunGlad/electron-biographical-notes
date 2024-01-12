@@ -20,5 +20,12 @@
    "moduleResolution": "node"
  },
  "exclude": ["dist", "node_modules"], // 这里需要排除掉 dist 目录和 node_modules 目录，不进行检查
- "include": ["app/**/*.ts", "app/**/*.tsx", "app/**/*.d.ts"]
+ "include": ["app/**/*.ts", "app/**/*.tsx", "app/**/*.d.ts"],
+ // 👇 如果ts报错，添加下面这段代码
+ "baseUrl": "./",
+ "paths": {
+   "@assets/*": ["./assets/*"],
+   "@src/*": ["./app/renderer/*"],
+   "@common/*": ["./app/renderer/common/*"]
+ }
 }
