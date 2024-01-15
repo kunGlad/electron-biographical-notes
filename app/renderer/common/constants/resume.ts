@@ -21,7 +21,7 @@ const RESUME_TOOLBAR_LIST: TSResume.SliderItem[] = [
   },
   {
     key: RESUME_TOOLBAR_MAPS.education,
-    name: '教育信息(暂时没有对应组件)',
+    name: '教育信息',
     summary: '介绍你的学校和专业信息',
     require: false,
   },
@@ -39,19 +39,19 @@ const RESUME_TOOLBAR_LIST: TSResume.SliderItem[] = [
   },
   {
     key: RESUME_TOOLBAR_MAPS.schoolExperience,
-    name: '在校经历',
+    name: '在校经历(暂时没有对应弹窗)',
     summary: '展示在校任职成果和人际关系',
     require: false,
   },
   {
     key: RESUME_TOOLBAR_MAPS.projectExperience,
-    name: '项目经验',
+    name: '项目经验(暂时没有对应弹窗)',
     summary: '展示研究过什么优秀项目和成果',
     require: false,
   },
   {
     key: RESUME_TOOLBAR_MAPS.workExperience,
-    name: '工作经历',
+    name: '工作经历(暂时没有对应弹窗)',
     summary: '申请岗位的相关经验和能力',
     require: false,
   },
@@ -63,7 +63,7 @@ const RESUME_TOOLBAR_LIST: TSResume.SliderItem[] = [
   },
   {
     key: RESUME_TOOLBAR_MAPS.evaluation,
-    name: '个人评价',
+    name: '个人评价(暂时没有对应弹窗)',
     summary: '低调夸一夸自己有什么亮点',
   },
   {
@@ -73,7 +73,7 @@ const RESUME_TOOLBAR_LIST: TSResume.SliderItem[] = [
   },
   {
     key: RESUME_TOOLBAR_MAPS.test,
-    name: '测试用例',
+    name: '测试用例(暂时没有对应弹窗)',
     summary: '测试用例，一键覆盖',
   },
 ];
