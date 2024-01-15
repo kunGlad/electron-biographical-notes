@@ -43,6 +43,13 @@ t-redux@7.2.4` 简化对 redux 的操作
 
 resume 划分为三个部分，分别书写代码，其中第二部分 content 是引入了之前写好的静态模版文件，还遇到了 toolbar 引入文件路径正确但是不显示的情况，在 webpack.base.js 中配置 esModule:false 即可
 
+### 入口页面的开发 -- feat/chapter-08
+
+1. toolbar 对模块添加交互功能 - 模块的增加与删除
+2. toolbar 与 content 进行通信
+3. 通过发布订阅实现工具条模块与简历模版的消息通信
+4. 实现对应弹窗信息的信息展示
+
 # 中途可能遇到的问题：
 
 ### 下载 electron 指定版本非常慢
