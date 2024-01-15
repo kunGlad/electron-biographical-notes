@@ -2,7 +2,7 @@ import React from 'react';
 import './index.less';
 import { useHistory } from 'react-router';
 import { shell } from 'electron';
-// import Logo from '@assets/logo.jpg';
+import Logo from '@assets/logo.png';
 import { ROUTER_ENTRY } from '@src/common/constants/router';
 import { isHttpOrHttpsUrl } from '@src/common/utils/router';
 import { useSelector, useDispatch } from 'react-redux';
@@ -26,7 +26,7 @@ function Root() {
   return (
     <div styleName="root">
       <div styleName="container">
-        {/* <img src={Logo} alt="" /> */}
+        <img src={Logo} alt="" />
         <div styleName="title">electron-biographical-notes</div>
         <div styleName="tips">一个模版简历制作平台，让你的简历更出众~</div>
         <div styleName="action">

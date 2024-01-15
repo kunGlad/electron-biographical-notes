@@ -27,6 +27,8 @@ module.exports = {
             options: {
               name: '[name]_[hash].[ext]',
               outputPath: 'images/',
+              // 图片 icon 并未正确显示，background: url([object Module])
+              esModule: false,
             },
           },
         ],

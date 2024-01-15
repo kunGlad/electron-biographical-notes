@@ -39,6 +39,10 @@ t-redux@7.2.4` 简化对 redux 的操作
 1. button, input, textarea, upload, modal, scrollbox
 2. 定义 resume 相关 store 和 mock 数据
 
+### 入口页面的开发 -- feat/chapter-07
+
+resume 划分为三个部分，分别书写代码，其中第二部分 content 是引入了之前写好的静态模版文件，还遇到了 toolbar 引入文件路径正确但是不显示的情况，在 webpack.base.js 中配置 esModule:false 即可
+
 # 中途可能遇到的问题：
 
 ### 下载 electron 指定版本非常慢
