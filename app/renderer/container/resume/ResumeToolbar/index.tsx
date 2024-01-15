@@ -5,12 +5,27 @@ import React, { useEffect, useState } from 'react';
 import './index.less';
 import MyScrollBox from '@src/common/components/ScrollBox';
 import RESUME_TOOLBAR_LIST from '@src/common/constants/resume';
+import { useDispatch, useSelector } from 'react-redux';
 
 // 👇 改造后的逻辑
 import { onAddToolbar, onDeleteToolbar } from './utils';
 
 function ResumeToolbar() {
   const height = document.body.clientHeight;
+  const dispatch = useDispatch();
+
+  // 👇 修改 redux 中的值，使用 rc-redux-model 提供的 API
+  const changeResumeToolbarKeys = (moduleKeys: string[]) => {
+    if (moduleKeys.length > 0) {
+      dispatch({
+        type: 'templateModel/setStore',
+        payload: {
+          key: 'resumeToolbarKeys',
+          values: moduleKeys,
+        },
+      });
+    }
+  };
 
   // 👇 定义已添加模块与未添加模块
   const [addToolbarList, setAddToolbarList] = useState<TSResume.SliderItem[]>([]);
@@ -20,6 +35,7 @@ function ResumeToolbar() {
   const onAddSliderAction = (moduleToolbar: TSResume.SliderItem) => {
     const nextAddSliderList = onAddToolbar(addToolbarList, moduleToolbar);
     setAddToolbarList(nextAddSliderList);
+    changeResumeToolbarKeys(nextAddSliderList?.map((s) => s.key));
     const nextUnAddSliderList = onDeleteToolbar(unAddToolbarList, moduleToolbar);
     setUnAddToolbarList(nextUnAddSliderList);
   };
@@ -30,10 +46,14 @@ function ResumeToolbar() {
     if (!moduleSlider.require) {
       const nextAddSliderList = onDeleteToolbar(addToolbarList, moduleSlider);
       setAddToolbarList(nextAddSliderList);
+      changeResumeToolbarKeys(nextAddSliderList?.map((s) => s.key));
       const nextUnAddSliderList = onAddToolbar(unAddToolbarList, moduleSlider);
       setUnAddToolbarList(nextUnAddSliderList);
     }
   };
+
+  const toolbarKey = useSelector((state: any) => state.templateModel.resumeToolbarKeys);
+  console.log('toolbarKey===', toolbarKey);
 
   useEffect(() => {
     if (RESUME_TOOLBAR_LIST.length > 0) {
@@ -44,6 +64,8 @@ function ResumeToolbar() {
         if (!s.require) _unAddToolbarList.push(s);
       });
       setAddToolbarList(_addToolbarList);
+      // 👇 将已添加模块的所有keys进行修改
+      changeResumeToolbarKeys(_addToolbarList.map((s) => s.key));
       setUnAddToolbarList(_unAddToolbarList);
     }
   }, []);

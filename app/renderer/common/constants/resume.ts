@@ -21,7 +21,7 @@ const RESUME_TOOLBAR_LIST: TSResume.SliderItem[] = [
   },
   {
     key: RESUME_TOOLBAR_MAPS.education,
-    name: '教育信息',
+    name: '教育信息(暂时没有对应组件)',
     summary: '介绍你的学校和专业信息',
     require: false,
   },
