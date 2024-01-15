@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // 👇 改造后的逻辑
 import { onAddToolbar, onDeleteToolbar } from './utils';
+import Messager, { MESSAGE_EVENT_NAME_MAPS } from '@src/common/messager';
 
 function ResumeToolbar() {
   const height = document.body.clientHeight;
@@ -52,9 +53,6 @@ function ResumeToolbar() {
     }
   };
 
-  const toolbarKey = useSelector((state: any) => state.templateModel.resumeToolbarKeys);
-  console.log('toolbarKey===', toolbarKey);
-
   useEffect(() => {
     if (RESUME_TOOLBAR_LIST.length > 0) {
       const _addToolbarList: TSResume.SliderItem[] = [];
@@ -81,13 +79,33 @@ function ResumeToolbar() {
           <div styleName="content">
             {addToolbarList.map((toolbar: TSResume.SliderItem) => {
               return (
-                <div styleName="box" key={toolbar.key} onClick={() => onDeleteSliderAction(toolbar)}>
+                <div
+                  styleName="box"
+                  key={toolbar.key}
+                  onClick={() => {
+                    // 事件发送
+                    Messager.send(MESSAGE_EVENT_NAME_MAPS.OPEN_FORM_MODAL, { form_name: toolbar.key });
+                  }}
+                >
                   <div styleName="info">
                     <i styleName="icon" />
                     <div styleName="text">
                       <div styleName="name">{toolbar.name}</div>
                       <div styleName="summary">{toolbar.summary}</div>
                     </div>
+                    {!toolbar.require && (
+                      <div styleName="action">
+                        <i styleName="edit" onClick={(e: React.MouseEvent) => {}} />
+                        <i
+                          styleName="delete"
+                          onClick={(e: React.MouseEvent) => {
+                            // 👇 这里需要阻止冒泡！！！
+                            e.stopPropagation && e.stopPropagation();
+                            onDeleteSliderAction(toolbar);
+                          }}
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               );
